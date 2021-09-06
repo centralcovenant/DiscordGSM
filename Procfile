@@ -1,1 +1,1 @@
-web:npm start & python3 bot.py
+web: npm start & python3 bot.py
