@@ -7,7 +7,7 @@
     },
     "scripts": {
         "build": "npm install -g gamedig",
-        "start": "node heroku/app.js"
+        "start": "node index.js"
     },
     "license": "MIT",
     "dependencies": {
