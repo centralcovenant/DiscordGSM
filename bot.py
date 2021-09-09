@@ -36,7 +36,7 @@ if 'DGSM_TOKEN' in os.environ:
                 time.sleep(1)
 
 # env values
-VERSION = '1.8.3'
+VERSION = '1.8.1'
 SETTINGS = Settings.get()
 DGSM_TOKEN = os.getenv('DGSM_TOKEN', SETTINGS['token'])
 DGSM_PREFIX = os.getenv("DGSM_PREFIX", SETTINGS.get('prefix', '!'))
@@ -374,7 +374,9 @@ async def _setserversjson(ctx, *args):
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CheckAnyFailure):
-        await ctx.send("You don't have access to this command!", delete_after=10.0)
+        message = await ctx.send('''You dont have access to this commands!''')
+        await asyncio.sleep(10)
+        await message.delete()
 
 discordgsm = DiscordGSM(bot)
 discordgsm.start()
